@@ -1,20 +1,16 @@
-
 package com.example.noteapp.ui.fragment.onboard
 
 import PreferenceHelper
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.hw_noteapp.R
 import com.example.hw_noteapp.databinding.FragmentOnBoardBinding
-import com.example.noteapp.R
-import com.example.noteapp.databinding.FragmentOnBoardBinding
-import com.example.noteapp.ui.adapter.OnBoardViewPagerAdapter
+import com.example.hw_noteapp.fragment.OnBoardViewPagerAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 
 class OnBoardFragment : Fragment() {
