@@ -9,12 +9,11 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.hw_noteapp.NoteModel
+import com.example.hw_noteapp.App
 import com.example.hw_noteapp.OnClickItem
 import com.example.hw_noteapp.R
 import com.example.hw_noteapp.databinding.FragmentNoteBinding
-import com.example.noteapp.App
-import com.example.noteapp.R
+import com.example.noteapp.data.model.NoteModel
 import com.example.noteapp.ui.adapter.NoteAdapter
 
 class NoteFragment : Fragment(), OnClickItem {

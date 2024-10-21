@@ -3,19 +3,16 @@ package com.example.hw_noteapp.fragment
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.hw_noteapp.NoteModel
+import com.example.hw_noteapp.App
 import com.example.hw_noteapp.R
 import com.example.hw_noteapp.databinding.FragmentDetailNoteBinding
-import com.example.noteapp.App
-import com.example.noteapp.R
 import com.example.noteapp.data.model.NoteModel
-import com.example.noteapp.databinding.FragmentDetailNoteBinding
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -66,11 +63,25 @@ class DetailNoteFragment : Fragment() {
             val currentTime = binding.tvTime.text.toString()
 
             if (noteId != -1) {
-                val updateNote = NoteModel(etTitle, etDescription, currentDate, currentTime, selectedColor)
+                val updateNote = NoteModel(
+                    etTitle,
+                    etDescription,
+                    currentDate,
+                    currentTime,
+                    selectedColor
+                )
                 updateNote.id = noteId
                 App().getInstance()?.noteDao()?.updateNote(updateNote)
             } else {
-                App().getInstance()?.noteDao()?.insertNote(NoteModel(etTitle, etDescription, currentDate, currentTime, selectedColor))
+                App().getInstance()?.noteDao()?.insertNote(
+                    com.example.noteapp.data.model.NoteModel(
+                        etTitle,
+                        etDescription,
+                        currentDate,
+                        currentTime,
+                        selectedColor
+                    )
+                )
             }
             findNavController().navigate(R.id.action_detailNoteFragment_to_noteFragment)
         }

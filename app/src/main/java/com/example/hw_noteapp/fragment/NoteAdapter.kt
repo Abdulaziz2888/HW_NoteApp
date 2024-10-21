@@ -6,10 +6,10 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.noteapp.R
+import com.example.hw_noteapp.OnClickItem
+import com.example.hw_noteapp.R
+import com.example.hw_noteapp.databinding.ItemNoteBinding
 import com.example.noteapp.data.model.NoteModel
-import com.example.noteapp.databinding.ItemNoteBinding
-import com.example.noteapp.interfaces.OnClickItem
 
 class NoteAdapter(private val onLongClick: OnClickItem, private val onClick: OnClickItem) : ListAdapter<NoteModel, NoteAdapter.ViewHolder>(DiffCallback()) {
 
